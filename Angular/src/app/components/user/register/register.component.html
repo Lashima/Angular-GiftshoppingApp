@@ -1,0 +1,55 @@
+<div class="container-fluid px-1 px-md-5 px-lg-1 px-xl-5 py-5 mx-auto">
+  <div class="card card0 border-0">
+      <div class="row d-flex">
+          <div class="col-lg-6">
+              <div class="card1 pb-5">
+                  <br/><br/>
+                  <div class="row px-3 justify-content-center mt-4 mb-5 border-line"> <img src="https://thumbs.dreamstime.com/b/welcome-word-blue-circles-white-93627727.jpg" class="image"> </div>
+              </div>
+          </div>
+          <div class="col-lg-6">
+              
+                  <br/><br/>
+                <div *ngIf="isLoginError" class="red-text center error-message">
+                  <i class="material-icons">error</i> Incorrect username or password
+                </div>
+   
+                <form class="col s12 white" #RegisterForm="ngForm"  (ngSubmit)="RegisterForm.valid && OnSubmit(RegisterForm)">
+  
+                 
+                  <div class="input-field col s12">
+                    <input id="Username" name="Username" class="validate" placeholder="Username"  [ngClass]="{ 'is-invalid': Username.touched && Username.invalid }"  #Username="ngModel" [(ngModel)]="user.Username" [ngStyle]="{width:'300px'}" required />
+                    <span class="invalid-feedback">Username can't be blank.</span>
+                  </div>
+                  <div class="input-field col s12">
+                    <input type="password" id="Password" name="Password" class="validate" placeholder="Password"  [ngClass]="{ 'is-invalid': Password.touched && Password.invalid }" #Password="ngModel" [(ngModel)]="user.Password" [ngStyle]="{width:'320px'}" required  />
+                    <span class="invalid-feedback">Password cannot be null</span>
+                  </div>
+               
+                  <div class="input-field col s12">
+         
+                      <input  id="Email" name="Email" class="validate" placeholder="Email" [ngClass]="{ 'is-invalid': Email.touched && Email.invalid }" #Email="ngModel" [(ngModel)]="user.Email" [pattern]="emailPattern" [ngStyle]="{width:'300px'}" required  />
+                      <span class="invalid-feedback">Invalid Email</span>
+                    </div>
+                    <div class="row">
+                    <div class="input-field col s6">
+                      <input id="Firstname" class="validate" placeholder="Firstname" [ngClass]="{ 'is-invalid': Firstname.touched && Firstname.invalid }" name="Firstname" #Firstname="ngModel" [(ngModel)]="user.Firstname"  [ngStyle]="{width:'200px'}" required />
+                      <span class="invalid-feedback">firstname can't be blank.</span>
+                    </div>
+                    <div class="input-field col s6">
+                    
+                      <input id="Lastname" class="validate" placeholder="Lastname"  [ngClass]="{ 'is-invalid': Lastname.touched && Lastname.invalid }" name="Lastname" #Lastname="ngModel" [(ngModel)]="user.Lastname"[ngStyle]="{width:'200px'}" required />
+                      <span class="invalid-feedback">lastname can't be blank.</span>
+                    </div>
+                  </div>
+        
+               
+                  <div class="row mb-3 px-3"> <button type="submit"  [disabled]="RegisterForm.invalid" class="btn btn-blue text-center">Register</button> </div>
+                  <div class="row mb-4 px-3"> <small class="font-weight-bold">Already have account  ?<a class="text-success" routerLink='/login'><strong>Sign In</strong></a></small> </div>
+                </form>
+                
+          </div>
+      </div>
+      
+  </div>
+</div>

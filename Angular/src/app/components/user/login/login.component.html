@@ -1,0 +1,41 @@
+<div class="container-fluid px-1 px-md-5 px-lg-1 px-xl-5 py-5 mx-auto">
+  <div class="card card0 border-0">
+      <div class="row d-flex">
+          <div class="col-lg-6">
+              <div class="card1 pb-5">
+                  <br/><br/>
+                  <div class="row px-3 justify-content-center mt-4 mb-5 border-line"> <img src="https://image.freepik.com/free-photo/white-gift-box-with-blue-ribbon_1156-692.jpg" class="image"> </div>
+              </div>
+          </div>
+          <div class="col-lg-6">
+              
+                  <br/><br/>
+                <div *ngIf="isLoginError" class="red-text center error-message">
+                  <i class="material-icons">error</i> Incorrect username or password
+                </div>
+   
+                <form #loginForm="ngForm" class="col s12 white" (ngSubmit)="OnSubmit(UserName.value,Password.value)">
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <i class="material-icons prefix">account_circle</i>
+                      <input type="text" class="validate" #UserName [(ngModel)]="this.username" name="UserName" placeholder="Username"  required>
+                      <span class="invalid-feedback">Please enter username</span>
+                     </div>
+                  </div>
+                  <div class="row">
+                     <div class="input-field col s12">
+                       <i class="material-icons prefix">vpn_key</i>
+                       <input type="password" class="validate" #Password [(ngModel)]="this.password" name="Password" placeholder="Password"  required>
+                       <span class="invalid-feedback">please enter password</span>
+                     </div>
+                   </div>
+
+                  <div class="row mb-3 px-3"> <button type="submit"  [disabled]="!loginForm.valid" (click)="this.login()" class="btn btn-blue text-center">Login</button> </div>
+                  <div class="row mb-4 px-3"> <small class="font-weight-bold">Don't have an account? <a class="text-danger" routerLink='/register'>Register</a></small> </div>
+             </form>
+                
+          </div>
+      </div>
+      
+  </div>
+</div>

@@ -1,0 +1,16 @@
+.brand-logo .material-icons{
+    font-size: 60px;
+    color: goldenrod;
+    margin-right: 0px;
+}
+nav{
+    background-color:#0d47a1;
+}
+
+a:hover{
+    color: goldenrod;
+}
+strong{
+    color:honeydew;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}

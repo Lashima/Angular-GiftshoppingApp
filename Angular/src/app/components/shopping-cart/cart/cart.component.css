@@ -1,0 +1,11 @@
+.card-header strong {
+    font-weight: 800;
+    background-color:yellow;
+    font-size:15px
+}
+#logout:hover{
+    background-color: cornflowerblue;
+    font-size: 15px ;
+    font-weight: 500;
+}
+
